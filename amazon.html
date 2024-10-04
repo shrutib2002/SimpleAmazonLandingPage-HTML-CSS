@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background-color:  #0f1111;
+            padding: 10px 30px;
+            height: 90px;
+            color: white;
+        }
+
+        .logo {
+            margin-right: 15px;
+
+        }
+
+        .logo img {
+            height: 50px;
+
+        }
+
+        .loc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 15px;
+
+        }
+
+        .loc img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            margin-bottom: 5px;
+
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+
+            align-items: flex-start;
+
+        }
+
+        .text p {
+            font-size: 14px;
+            margin-bottom: 2px;
+
+        }
+
+        .text h2 {
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 0;
+        }
+
+        .search {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+
+            justify-content: space-evenly;
+            margin-right: auto;
+
+        }
+
+        .search select {
+            width: 70px;
+            height: 49px;
+            padding: 10px;
+            border-radius: 8px 0 0 8px;
+            border: none;
+
+            background-color: #fff;
+
+
+        }
+
+        .search input {
+            padding: 10px;
+            border: none;
+
+            border-radius: 0;
+
+            height: 49px;
+
+            width: 600px;
+            font-size: medium;
+        }
+
+        .search button {
+            border: none;
+
+            background-color: orange;
+
+            cursor: pointer;
+
+            height: 49px;
+
+            padding: 0;
+
+
+        }
+
+
+        .search button img {
+            height: 100%;
+
+            width: auto;
+
+            background: none;
+
+            transition: all 0.3s ease;
+            border-radius: 0 10px 10px 0;
+
+        }
+
+
+        .search button:hover img {
+            transform: scale(1.1);
+        }
+
+
+
+
+
+
+        .logo {
+            margin-right: 15px;
+
+        }
+
+        .logo img {
+            height: 50px;
+
+        }
+
+        .loc {
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+
+            margin-right: 15px;
+
+        }
+
+        .loc img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            margin-bottom: 5px;
+
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+
+            align-items: flex-start;
+
+        }
+
+        .text p {
+            font-size: 14px;
+
+            margin-bottom: 2px;
+
+        }
+
+        .text h2 {
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 0;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+
+        }
+
+        .search select {
+            font-size: medium;
+            width: 80px;
+            height: 45px;
+            padding: 10px;
+            border-radius: 8px 0 0 8px;
+            border: none;
+
+            background-color: #fff;
+
+        }
+
+        .search input {
+            padding: 10px;
+            border: none;
+
+            border-radius: 0;
+
+            height: 45px;
+
+        }
+
+        .search button {
+            border: none;
+
+            background-color: rgb(240, 169, 39);
+
+            cursor: pointer;
+
+            height: 45px;
+
+            padding: 0;
+
+        }
+
+        .search button img {
+            height: 100%;
+
+            width: auto;
+
+            background: none;
+
+        }
+
+
+
+        .lan select {
+            background-color: #0f1111;
+            font-size: medium;
+            color: white;
+            padding: 20px;
+            border: none;
+            margin-right: auto;
+        }
+
+        .reg,
+        .orders,
+        .cart {
+            margin-left: 20px;
+            margin-right: auto;
+
+        }
+
+        .reg a,
+        .orders a,
+        .cart a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            gap: 20px;
+        }
+
+
+
+        .lan select {
+            background-color: #0f1111;
+            color: white;
+            padding: 5px;
+            border: none;
+        }
+
+        .reg,
+        .orders,
+        .cart {
+            margin-left: 20px;
+
+        }
+
+        .reg a,
+        .orders a,
+        .cart a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+
+
+
+        .container {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin: 150px;
+        }
+
+        .container-1,
+        .container-2,
+        .container-3 {
+            flex: 1;
+
+            background-color: lightyellow;
+            padding: 20px;
+            border: 5px solid rgb(252, 246, 246);
+            border-radius: 5px;
+        }
+
+        .grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-rows: repeat(2, auto);
+
+            gap: 10px;
+
+        }
+
+        .grid img {
+            width: 140px;
+
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        h6 {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        body {
+            background-color: rgb(230, 228, 201);
+            font-family: Arial, sans-serif;
+        }
+
+
+        footer {
+            background-color: #0f1111;
+
+            color: white;
+
+            padding: 20px 30px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            flex-wrap: wrap;
+
+        }
+
+        .footer-container {
+            display: flex;
+
+            flex: 1;
+
+        }
+
+        .footer-section {
+            flex: 1;
+
+            margin-right: 20px;
+
+        }
+
+        .footer-section:last-child {
+            margin-right: 0;
+
+        }
+
+        .footer-section h3 {
+            margin-bottom: 10px;
+
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+
+            padding: 0;
+
+        }
+
+        .footer-section li {
+            margin-bottom: 5px;
+
+        }
+
+        .footer-section a {
+            color: white;
+
+            text-decoration: none;
+
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="amazonlogo.png" alt="Amazon Logo">
+            </div>
+            <div class="loc">
+                <img src="loc.png" alt="Location Icon">
+            </div>
+            <div class="text">
+                <p>Delivering to Bengaluru 562130</p><br>
+                <h2>Update Location</h2>
+            </div>
+            <div class="search">
+                <select name="categories" id="categories">
+                    <option value="">All</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="books">Books</option>
+                </select>
+                <input type="text" placeholder="Search Amazon.in">
+                <button><img src="search.png" alt="Search"></button>
+            </div>
+            <div class="lan">
+                <select name="language" id="language">
+                    <option value="english"><b>ENGLISH</b></option>
+                    <option value="hindi">HINDI</option>
+                    <option value="kannada">KANNADA</option>
+                </select>
+            </div>
+            <div class="reg"><a href="#">Register</a></div>
+            <div class="orders"><a href="#">Orders</a></div>
+            <div class="cart"><a href="#">Cart</a></div>
+        </nav>
+    </header>
+
+
+    <section class="container">
+        <div class="container-1">
+            <h3><b>Minimum 50% off | Home, kitchen & more</b></h3>
+            <div class="grid">
+                <div>
+                    <img src="wash.jpeg" alt="Washing Machine">
+                    <h6>Front loads | Up to 60% off</h6>
+                </div>
+                <div>
+                    <img src="fridge.jpeg" alt="Fridge">
+                    <h6>High capacity fridges | Up to 60% off</h6>
+                </div>
+                <div>
+                    <img src="ac.jpg" alt="Air Conditioner">
+                    <h6>Energy efficient ACs | Up to 50% off</h6>
+                </div>
+                <div>
+                    <img src="chimneys.png" alt="Chimney">
+                    <h6>Autoclean chimneys | Up to 75% off</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-2">
+            <h3><b>Discount Up to 70% | Never before offers on appliances</b></h3>
+            <div class="grid">
+                <div>
+                    <img src="cooker.jpeg" alt="Cooker">
+                    <h6>Kitchen appliance</h6>
+                </div>
+                <div>
+                    <img src="homedecor.jpeg" alt="Home Decor">
+                    <h6>Home decor</h6>
+                </div>
+                <div>
+                    <img src="sofa.jpeg" alt="Sofa">
+                    <h6>Furniture</h6>
+                </div>
+                <div>
+                    <img src="lamp.jpeg" alt="Lamp">
+                    <h6>Table lamp</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-3">
+            <h3><b>Starting Rs.299 | Latest styles from top brands</b></h3>
+            <div class="grid">
+                <div>
+                    <img src="kurtas.jpeg" alt="Kurtas">
+                    <h6>Kurtas</h6>
+                </div>
+                <div>
+                    <img src="tops.jpeg" alt="Tops">
+                    <h6>Tops</h6>
+                </div>
+                <div>
+                    <img src="dresses.jpeg" alt="Dresses">
+                    <h6>Dresses</h6>
+                </div>
+                <div>
+                    <img src="saree.jpeg" alt="Sarees">
+                    <h6>Sarees</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="#">About Amazon</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">Amazon Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect with Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Make Money with Us</h3>
+                <ul>
+                    <li><a href="#">Sell on Amazon</a></li>
+                    <li><a href="#">Sell under Amazon Accelerator</a></li>
+                    <li><a href="#">Protect and Build Your Brand</a></li>
+                    <li><a href="#">Amazon Global Selling</a></li>
+                    <li><a href="#">Supply to Amazon</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Fulfilment by Amazon</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                    <li><a href="#">Amazon Pay on Merchants</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Let Us Help You</h3>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Returns Centre</a></li>
+                    <li><a href="#">Recalls and Product Safety Alerts</a></li>
+                    <li><a href="#">100% Purchase Protection</a></li>
+                    <li><a href="#">Amazon App Download</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
